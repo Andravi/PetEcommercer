@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Flask
+instance/
+.webassets-cache
+.env
+.env.local
+config.local.py
+flask_session/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+!database/schema.sql  # Exceção para schema inicial
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Uploads
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+
+# Migrations (opcional - alguns versionam)
+# migrations/  # Descomente se NÃO quiser versionar
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ambiente
+.env.postgres
+postgres_data/
