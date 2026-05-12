@@ -1,4 +1,3 @@
-# app/controllers/favorito_controller.py
 from app import db
 from app.models.usuario_favorito_produto import UsuarioFavoritoProduto
 from datetime import datetime

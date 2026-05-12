@@ -13,14 +13,12 @@ def create_app(config_name='default'):
     db.init_app(app)
     migrate.init_app(app, db)
     
-    # Importar todos os blueprints
     from app.routes import (
         usuario_bp, categoria_bp, produto_bp, 
         venda_bp, carrinho_bp, favorito_bp,
         log_estoque_bp  
     )
     
-    # Registrar blueprints
     app.register_blueprint(usuario_bp, url_prefix='/api/usuarios')
     app.register_blueprint(categoria_bp, url_prefix='/api/categorias')
     app.register_blueprint(produto_bp, url_prefix='/api/produtos')

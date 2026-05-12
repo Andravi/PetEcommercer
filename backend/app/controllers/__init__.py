@@ -1,8 +1,3 @@
-# app/controllers/__init__.py
-"""
-Exporta todos os controllers para facilitar importações
-"""
-
 from app.controllers.usuario_controller import UsuarioController
 from app.controllers.categoria_controller import CategoriaController
 from app.controllers.produto_controller import ProdutoController

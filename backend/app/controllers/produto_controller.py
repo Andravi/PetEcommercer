@@ -18,7 +18,6 @@ class ProdutoController:
         db.session.add(produto)
         db.session.commit()
         
-        # Criar log de estoque
         log = LogEstoque(
             produto_id=produto.id,
             usuario_id=usuario_id,

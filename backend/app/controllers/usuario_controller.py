@@ -7,10 +7,11 @@ class UsuarioController:
     @staticmethod
     def criar_usuario(data):
         """Cria um novo usuário"""
-        # Verificar se login já existe
         if Usuario.query.filter_by(login=data['login']).first():
             return {'erro': 'Login já existe'}, 400
-        
+        if Usuario.query.filter_by(email=data['email']).first():
+            return {'erro': 'Email já existe'}, 400
+
         usuario = Usuario(
             nome=data['nome'],
             endereco=data['endereco'],

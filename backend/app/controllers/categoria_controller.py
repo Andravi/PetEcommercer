@@ -6,7 +6,7 @@ class CategoriaController:
     @staticmethod
     def criar_categoria(data):
         """Cria uma nova categoria"""
-        categoria = Categoria(descricao=data['descricao'])
+        categoria = Categoria(nome=data['nome'], descricao=data['descricao'])
         db.session.add(categoria)
         db.session.commit()
         return categoria.to_dict(), 201
@@ -32,6 +32,8 @@ class CategoriaController:
         if not categoria:
             return {'erro': 'Categoria não encontrada'}, 404
         
+        if 'nome' in data:
+            categoria.nome = data['nome']
         if 'descricao' in data:
             categoria.descricao = data['descricao']
         
@@ -45,7 +47,6 @@ class CategoriaController:
         if not categoria:
             return {'erro': 'Categoria não encontrada'}, 404
         
-        # Verificar se existem produtos nesta categoria
         if categoria.produtos:
             return {'erro': 'Não é possível deletar categoria com produtos associados'}, 400
         

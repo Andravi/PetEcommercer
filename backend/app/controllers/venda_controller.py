@@ -1,4 +1,3 @@
-# app/controllers/venda_controller.py
 from app import db
 from app.models.venda import Venda
 from app.models.venda_produto import VendaProduto
@@ -11,7 +10,7 @@ class VendaController:
     @staticmethod
     def criar_venda(usuario_id):
         """Cria uma venda a partir dos itens do carrinho"""
-        # Buscar itens do carrinho
+        # Todo Trocar lógica
         carrinho_items = CarrinhoItem.query.filter_by(usuario_id=usuario_id).all()
         
         if not carrinho_items:
